@@ -12,12 +12,10 @@ public class CarResolver {
 	List<CarInterface> carInterfaceList;
 
 	public CarInterface getCarInterface(Car car) {
-		final CarInterface[] bla = new CarInterface[1];
-		carInterfaceList.forEach(carInterface -> {
-			if (carInterface.getImplementationClass().getName().equals(car.getClass().getName())) {
-				bla[0] = carInterface;
-			}
-		});
-		return bla[0];
+		return carInterfaceList
+				.stream()
+				.filter(carInterface -> carInterface.getImplementationClass().getName().equals(car.getClass().getName()))
+				.findFirst()
+				.orElse(null);
 	}
 }

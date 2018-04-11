@@ -28,4 +28,11 @@ public class CarController {
 		Golf golf = new Golf();
 		return new ResponseEntity<>(carResolver.getCarInterface(golf).getCar(golf), HttpStatus.OK);
 	}
+
+	@RequestMapping(value = "/cars/vw", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public ResponseEntity<String> getVWCar() {
+		VW vw = new VW();
+		return new ResponseEntity<>(carResolver.getCarInterface(vw).getCar(vw), HttpStatus.OK);
+	}
 }

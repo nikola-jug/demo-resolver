@@ -3,7 +3,7 @@ package com.example.demo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GoldInterface implements CarInterface<Golf> {
+public class GolfInterface implements CarInterface<Golf> {
 
 	@Override
 	public String getCar(Golf car) {
